@@ -11,6 +11,11 @@
 		CFA9CBF028830FBA009D0843 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA9CBEF28830FBA009D0843 /* ContentView.swift */; };
 		CFA9CBF228830FBA009D0843 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFA9CBF128830FBA009D0843 /* Assets.xcassets */; };
 		CFA9CBF528830FBA009D0843 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFA9CBF428830FBA009D0843 /* Preview Assets.xcassets */; };
+		CFA9CBFC28830FC4009D0843 /* Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA9CBFB28830FC4009D0843 /* Drawer.swift */; };
+		CFA9CC012883103E009D0843 /* DrawerViewHaptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA9CBFF2883103E009D0843 /* DrawerViewHaptics.swift */; };
+		CFA9CC042883107D009D0843 /* CoreHaptics-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA9CC032883107D009D0843 /* CoreHaptics-extension.swift */; };
+		CFA9CC062883238A009D0843 /* OvercastPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA9CC052883238A009D0843 /* OvercastPlayer.swift */; };
+		CFA9CC0A28836F31009D0843 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA9CC0928836F31009D0843 /* Playlist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		CFA9CBEF28830FBA009D0843 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CFA9CBF128830FBA009D0843 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFA9CBF428830FBA009D0843 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CFA9CBFB28830FC4009D0843 /* Drawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawer.swift; sourceTree = "<group>"; };
+		CFA9CBFF2883103E009D0843 /* DrawerViewHaptics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerViewHaptics.swift; sourceTree = "<group>"; };
+		CFA9CC032883107D009D0843 /* CoreHaptics-extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreHaptics-extension.swift"; sourceTree = "<group>"; };
+		CFA9CC052883238A009D0843 /* OvercastPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvercastPlayer.swift; sourceTree = "<group>"; };
+		CFA9CC0928836F31009D0843 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +63,11 @@
 			children = (
 				CFA9CBED28830FBA009D0843 /* OvercastDrawerApp.swift */,
 				CFA9CBEF28830FBA009D0843 /* ContentView.swift */,
+				CFA9CC0928836F31009D0843 /* Playlist.swift */,
+				CFA9CC052883238A009D0843 /* OvercastPlayer.swift */,
+				CFA9CBFB28830FC4009D0843 /* Drawer.swift */,
+				CFA9CBFF2883103E009D0843 /* DrawerViewHaptics.swift */,
+				CFA9CC032883107D009D0843 /* CoreHaptics-extension.swift */,
 				CFA9CBF128830FBA009D0843 /* Assets.xcassets */,
 				CFA9CBF328830FBA009D0843 /* Preview Content */,
 			);
@@ -137,8 +152,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFA9CC042883107D009D0843 /* CoreHaptics-extension.swift in Sources */,
+				CFA9CC012883103E009D0843 /* DrawerViewHaptics.swift in Sources */,
 				CFA9CBF028830FBA009D0843 /* ContentView.swift in Sources */,
+				CFA9CC0A28836F31009D0843 /* Playlist.swift in Sources */,
+				CFA9CBFC28830FC4009D0843 /* Drawer.swift in Sources */,
 				CFA9CBEE28830FBA009D0843 /* OvercastDrawerApp.swift in Sources */,
+				CFA9CC062883238A009D0843 /* OvercastPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
