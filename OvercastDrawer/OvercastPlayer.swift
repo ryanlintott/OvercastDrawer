@@ -18,7 +18,7 @@ struct OvercastPlayer: View {
     
     var body: some View {
         GeometryReader { proxy in
-            Drawer($drawerState, openHeight: proxy.size.height, closedHeight: closedHeight) {
+            Drawer($drawerState, proxy: proxy, closedHeight: closedHeight) {
                 VStack {
                     VStack {
                         VStack {
@@ -142,7 +142,9 @@ struct OvercastPlayer: View {
                 .padding(.bottom, 200)
                 .background(Rectangle().fill(.white).ignoresSafeArea())
                 .clipped()
-                .shadow(radius: 10)
+            } background: {
+                Color.white
+                    .shadow(radius: 10)
             }
         }
 //        .background(Color.init(white: 0.9))

@@ -64,19 +64,21 @@ enum DrawerState: Equatable {
     }
 }
 
-struct Drawer<Content: View>: View {
+struct Drawer<Content: View, Background: View>: View {
     @Environment(\.accessibilityReduceMotion) var reduceMotion
     
     @Binding var drawerState: DrawerState
-    let openHeight: CGFloat
+    let proxy: GeometryProxy
     let closedHeight: CGFloat
     let content: Content
+    let background: Background
     
-    init(_ drawerState: Binding<DrawerState>, openHeight: CGFloat, closedHeight: CGFloat, content: () -> Content) {
+    init(_ drawerState: Binding<DrawerState>, proxy: GeometryProxy, closedHeight: CGFloat, content: () -> Content, background: () -> Background) {
         self._drawerState = drawerState
-        self.openHeight = openHeight
+        self.proxy = proxy
         self.closedHeight = closedHeight
         self.content = content()
+        self.background = background()
     }
     
     let haptics = DrawerViewHaptics.shared
@@ -85,6 +87,7 @@ struct Drawer<Content: View>: View {
     @State private var predictedDragOffset: CGFloat = .zero
     @GestureState private var isDragging: Bool = false
     
+    var openHeight: CGFloat { proxy.size.height }
     var heightDifference: CGFloat {
         openHeight - closedHeight
     }
@@ -101,6 +104,11 @@ struct Drawer<Content: View>: View {
         Color.clear
             .overlay(
                 content
+                    .background(
+                        background
+                            .padding(.top, drawerState.value(open: -proxy.safeAreaInsets.top, closed: 0))
+                            .ignoresSafeArea(.all, edges: .bottom)
+                    )
                     .frame(height: drawerHeight)
                 , alignment: .top
             )
@@ -152,7 +160,7 @@ struct Drawer_Previews: PreviewProvider {
                 Color.blue
                 
                 GeometryReader { proxy in
-                    Drawer($drawerState, openHeight: proxy.size.height, closedHeight: 200) {
+                    Drawer($drawerState, proxy: proxy, closedHeight: 200) {
                         HStack {
                             Text("Cover")
                             Spacer()
@@ -164,10 +172,10 @@ struct Drawer_Previews: PreviewProvider {
                             Spacer()
                             Text("Cover")
                         }
-                        .background(Color.red)
+                    } background: {
+                        Color.red
                     }
                 }
-//                .ignoresSafeArea(.all, edges: .all)
             }
         }
         
