@@ -110,7 +110,7 @@ struct OvercastPlayer: View {
                     Button {
                         withAnimation(.spring()) { drawerState.toggle() }
                     } label: {
-                        Image(systemName: "chevron.up")
+                        Image(systemName: "chevron.down")
                             .rotationEffect(.degrees(drawerState.value(open: 0, closed: 180)))
                             .font(.title)
                             .padding()
